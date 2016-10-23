@@ -1,7 +1,6 @@
 # Autocomplete
 autoload -U compinit && compinit
 
-
 # Advanced prompt support
 autoload -U promptinit && promptinit
 
@@ -18,8 +17,13 @@ export REPORTTIME=10
 setopt INC_APPEND_HISTORY
 setopt SHARE_HISTORY
 
-# Set JAVA_HOME (edit the v. number to quickly switch between Java versions)
-export JAVA_HOME="`/usr/libexec/java_home -v '1.8*'`"
+# Setup path
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
-# Load rvm
-source ~/.rvm/scripts/rvm
+# Conda
+export PATH=/Users/laurencepascall/anaconda3/bin:$PATH
+
+# RVM
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
